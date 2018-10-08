@@ -9,10 +9,16 @@ public class Application extends JFrame {
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+            
+            try {
             @Override
             public void run() {
                 JFrame ex = new Application();
                 ex.setVisible(true);
+                ex.setLayout(null);
+            }} catch (IOExeption i) {
+             System.err.println("IOExeption! :" + i.getMessage());
+               i.printStackTrace();
             }
         });
     }
